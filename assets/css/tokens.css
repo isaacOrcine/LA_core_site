@@ -1,0 +1,80 @@
+/* ==========================================================================
+   L.A. Core — Design tokens
+   Paleta derivada da identidade visual da marca.
+   ========================================================================== */
+
+:root {
+  /* ---- Cores da marca ---- */
+  --verde-escuro:   #35512A;
+  --verde-oliva:    #7A7357;
+  --oliva-claro:    #8C9179;
+  --areia:          #B79A79;
+  --dourado:        #CDB07A;
+  --dourado-escuro: #A9874A;
+  --creme:          #EFE8DE;
+  --creme-claro:    #F8F4EE;
+  --marrom:         #4B3A2C;
+  --marrom-medio:   #89663E;
+  --branco:         #FDFCFA;
+  --whatsapp:       #0F7A41;  /* verde WhatsApp escurecido: 5.4:1 com branco (AA) */
+
+  /* ---- Papéis semânticos ---- */
+  --bg:             var(--creme-claro);
+  --bg-alt:         var(--creme);
+  --bg-escuro:      var(--marrom);
+  --bg-verde:       var(--verde-escuro);
+  --superficie:     var(--branco);
+
+  --texto:          #2B2118;  /* 14.2:1 sobre --bg  (AAA) */
+  --texto-suave:    #55442F;  /*  7.4:1 sobre --bg  (AAA) */
+  --texto-inverso:  #F6F1E8;
+  --texto-inverso-suave: #E2D8C8;
+
+  --borda:          #DCD1BF;
+  --borda-forte:    #C3B49C;
+
+  /* ---- Tipografia ----
+     Corpo a 19px: o público inclui idosos. Escala fluida via clamp(). */
+  --fonte-titulo: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --fonte-corpo:  "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --t-xs:   0.9375rem;                              /* 15px  */
+  --t-sm:   1.0625rem;                              /* 17px  */
+  --t-base: 1.1875rem;                              /* 19px  */
+  --t-md:   clamp(1.25rem, 0.5vw + 1.13rem, 1.4rem);
+  --t-lg:   clamp(1.5rem,  1vw  + 1.25rem, 1.9rem);
+  --t-xl:   clamp(1.9rem,  2vw  + 1.4rem,  2.6rem);
+  --t-2xl:  clamp(2.3rem,  3vw  + 1.5rem,  3.4rem);
+  --t-3xl:  clamp(2.7rem,  4vw  + 1.6rem,  4.2rem);
+
+  --linha-titulo: 1.15;
+  --linha-corpo:  1.7;
+  --medida:       65ch;  /* largura máxima de leitura confortável */
+
+  /* ---- Espaçamento ---- */
+  --e-1: 0.25rem;  --e-2: 0.5rem;   --e-3: 0.75rem;  --e-4: 1rem;
+  --e-5: 1.5rem;   --e-6: 2rem;     --e-7: 3rem;     --e-8: 4rem;
+  --e-9: 6rem;
+  --secao-y: clamp(3.5rem, 7vw, 6.5rem);
+  --pagina-x: clamp(1rem, 4vw, 2.5rem);
+  --largura-max: 1200px;
+
+  /* ---- Formas e profundidade ---- */
+  --r-sm: 10px;  --r-md: 18px;  --r-lg: 26px;  --r-pill: 999px;
+  --sombra-sm: 0 2px 8px rgba(43, 33, 24, .07);
+  --sombra-md: 0 8px 24px rgba(43, 33, 24, .10);
+  --sombra-lg: 0 18px 44px rgba(43, 33, 24, .16);
+
+  /* ---- Interação ----
+     Alvos de toque generosos: 56px é o mínimo confortável para mãos idosas. */
+  --alvo-min: 56px;
+  --transicao: 220ms cubic-bezier(.4, 0, .2, 1);
+  --anel: 3px solid var(--marrom);
+  --anel-halo: 0 0 0 6px rgba(205, 176, 122, .6);
+}
+
+/* Anel de foco legível sobre fundos escuros */
+.secao--escura, .secao--verde, .rodape {
+  --anel: 3px solid var(--dourado);
+  --anel-halo: 0 0 0 6px rgba(0, 0, 0, .45);
+}

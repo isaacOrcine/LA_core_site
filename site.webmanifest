@@ -1,0 +1,13 @@
+{
+  "name": "L.A. Core Fisioterapia e Pilates",
+  "short_name": "L.A. Core",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F4EE",
+  "theme_color": "#4B3A2C",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

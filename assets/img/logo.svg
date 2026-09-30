@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="L.A. Core">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6CF98"/><stop offset="1" stop-color="#B8995C"/></linearGradient></defs>
+  <text x="8" y="50" font-family="Playfair Display, Georgia, serif" font-size="44" fill="url(#g)">L</text>
+  <text x="26" y="46" font-family="Playfair Display, Georgia, serif" font-size="40" fill="url(#g)">A</text>
+  <path d="M10 54 C 24 60, 44 58, 58 46" stroke="url(#g)" stroke-width="1.6" fill="none"/>
+</svg>
