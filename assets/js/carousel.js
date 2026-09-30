@@ -18,6 +18,7 @@
     var btnProx  = carrossel.querySelector('[data-proximo]');
     var btnPausa = carrossel.querySelector('[data-pausa]');
     var status   = carrossel.querySelector('[data-status]');
+    var contador = carrossel.querySelector('[data-contador]');
 
     var atual = 0;
     var posicoes = 1;
@@ -55,6 +56,7 @@
         if (i === atual) b.setAttribute('aria-current', 'true');
         else b.removeAttribute('aria-current');
       });
+      if (contador) contador.textContent = (atual + 1) + ' / ' + slides.length;
     }
 
     function irPara(i, anunciar) {

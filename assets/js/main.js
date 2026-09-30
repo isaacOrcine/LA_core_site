@@ -12,6 +12,29 @@
   window.addEventListener('scroll', aoRolar, { passive: true });
   aoRolar();
 
+  /* ---------- Barra de ações no celular ----------
+     Escondida enquanto os botões do topo estão na tela (seriam repetidos) e
+     enquanto a pessoa digita no formulário (o teclado a empurraria para cima). */
+  var barra = document.querySelector('[data-barra-acoes]');
+  var acoesHero = document.querySelector('.hero__acoes .btn');
+  if (barra) {
+    var heroVisivel = false, digitando = false;
+    var atualizarBarra = function () { barra.dataset.oculta = String(heroVisivel || digitando); };
+    if (acoesHero && 'IntersectionObserver' in window) {
+      /* Só conta como visível se o botão aparecer inteiro (não só uma beirada) */
+      new IntersectionObserver(function (entradas) {
+        heroVisivel = entradas[0].intersectionRatio > 0.95;
+        atualizarBarra();
+      }, { threshold: [0, 0.95, 1] }).observe(acoesHero);
+    }
+    document.addEventListener('focusin', function (e) {
+      digitando = !!e.target.closest('input, select, textarea');
+      atualizarBarra();
+    });
+    document.addEventListener('focusout', function () { digitando = false; atualizarBarra(); });
+    atualizarBarra();
+  }
+
   /* ---------- Menu no celular ---------- */
   var menuBotao = document.querySelector('.menu-botao');
   var menu = document.getElementById('menu-movel');
@@ -21,9 +44,10 @@
     menuBotao.setAttribute('aria-expanded', String(abrir));
     menuBotao.querySelector('.menu-botao__texto').textContent = abrir ? 'Fechar' : 'Menu';
     document.body.style.overflow = abrir ? 'hidden' : '';
-    /* O menu já tem seu próprio botão de WhatsApp: esconde o flutuante para não sobrepor */
+    /* O menu já tem seu próprio botão de WhatsApp: esconde o flutuante e a barra para não sobrepor */
     var wpp = document.querySelector('[data-wpp]');
     if (wpp) wpp.hidden = abrir;
+    if (barra) barra.hidden = abrir;
     if (abrir) menu.querySelector('a').focus();
   }
   menuBotao.addEventListener('click', function () {
@@ -104,6 +128,64 @@
       moldura.appendChild(f);
     });
   });
+
+  /* ---------- Formulário: recolhido no celular, sempre aberto no computador ---------- */
+  var caixaForm = document.querySelector('[data-formulario-caixa]');
+  if (caixaForm) {
+    var telaGrande = window.matchMedia('(min-width: 960px)');
+    var ajustarCaixa = function () { if (telaGrande.matches) caixaForm.open = true; };
+    ajustarCaixa();
+    if (telaGrande.addEventListener) telaGrande.addEventListener('change', ajustarCaixa);
+  }
+
+  /* ---------- Status "Aberto agora" (horário de Brasília) ---------- */
+  var statusHorario = document.querySelectorAll('[data-status-horario]');
+  if (statusHorario.length) {
+    /* [abre, fecha] em minutos, por dia da semana (0 = domingo) */
+    var HORARIOS = [null, [420, 1200], [420, 1200], [420, 1200], [420, 1200], [420, 1200], [480, 660]];
+    var DIAS = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+    var hora = function (min) { return Math.floor(min / 60) + 'h' + (min % 60 ? String(min % 60).padStart(2, '0') : ''); };
+
+    var calcularStatus = function () {
+      var partes = {};
+      try {
+        new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'
+        }).formatToParts(new Date()).forEach(function (p) { partes[p.type] = p.value; });
+      } catch (_) { return null; }
+      var dia = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(partes.weekday);
+      var agora = (+partes.hour % 24) * 60 + (+partes.minute);
+      if (dia < 0 || isNaN(agora)) return null;
+
+      var hoje = HORARIOS[dia];
+      if (hoje && agora >= hoje[0] && agora < hoje[1]) {
+        return { aberto: true, texto: 'Aberto agora · até as ' + hora(hoje[1]) };
+      }
+      if (hoje && agora < hoje[0]) {
+        return { aberto: false, texto: 'Fechado agora · abre hoje às ' + hora(hoje[0]) };
+      }
+      for (var i = 1; i <= 7; i++) {
+        var d = (dia + i) % 7;
+        if (HORARIOS[d]) {
+          var quando = i === 1 ? 'amanhã' : DIAS[d];
+          return { aberto: false, texto: 'Fechado agora · abre ' + quando + ' às ' + hora(HORARIOS[d][0]) };
+        }
+      }
+      return null;
+    };
+
+    var mostrarHorario = function () {
+      var st = calcularStatus();
+      statusHorario.forEach(function (el) {
+        if (!st) { el.hidden = true; return; }
+        el.textContent = st.texto;
+        el.dataset.aberto = String(st.aberto);
+        el.hidden = false;
+      });
+    };
+    mostrarHorario();
+    setInterval(mostrarHorario, 60000);
+  }
 
   /* ---------- Formulário de contato ---------- */
   var form = document.querySelector('[data-formulario]');

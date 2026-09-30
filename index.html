@@ -29,7 +29,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap">
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -192,11 +192,11 @@
 
       <nav class="nav" aria-label="Menu principal">
         <ul class="nav__lista">
-          <li><a class="nav__link" href="#sobre">Sobre</a></li>
           <li><a class="nav__link" href="#servicos">Serviços</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
           <li><a class="nav__link" href="#equipe">Profissionais</a></li>
-          <li><a class="nav__link" href="#estrutura">Estrutura</a></li>
           <li><a class="nav__link" href="#depoimentos">Depoimentos</a></li>
+          <li><a class="nav__link" href="#estrutura">Estrutura</a></li>
           <li><a class="nav__link" href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -218,11 +218,11 @@
   <div class="menu-movel" id="menu-movel" data-aberto="false">
     <nav aria-label="Menu principal (celular)">
       <ul>
-        <li><a href="#sobre">Sobre a clínica</a></li>
         <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#sobre">Sobre a clínica</a></li>
         <li><a href="#equipe">Profissionais</a></li>
-        <li><a href="#estrutura">Estrutura</a></li>
         <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#estrutura">Estrutura</a></li>
         <li><a href="#duvidas">Dúvidas frequentes</a></li>
         <li><a href="#contato">Contato</a></li>
         <li><a href="#localizacao">Como chegar</a></li>
@@ -273,58 +273,8 @@
       </div>
     </section>
 
-    <!-- ============================================== SOBRE ============= -->
-    <section class="secao" id="sobre" aria-labelledby="sobre-titulo">
-      <div class="container sobre__grade">
-        <div class="sobre__texto revelar">
-          <span class="selo">Sobre a clínica</span>
-          <h2 id="sobre-titulo">Olá! Seja bem-vindo(a) à L.A. Core</h2>
-          <p style="margin-top:1.5rem">
-            A L.A. Core é uma clínica de fisioterapia comprometida com a excelência no
-            atendimento e com o bem-estar de cada paciente. Prezamos pela qualidade dos
-            nossos serviços, oferecendo um cuidado humanizado, individualizado e baseado
-            em evidências científicas.
-          </p>
-          <p>
-            Contamos com um corpo clínico especializado e em constante atualização,
-            preparado para atender diferentes necessidades: reabilitação ortopédica,
-            tratamento da dor musculoesquelética, fisioterapia pediátrica, fisioterapia
-            geriátrica e Pilates.
-          </p>
-          <p class="sobre__destaque">
-            Nosso objetivo é proporcionar melhora da dor, recuperação da funcionalidade
-            e qualidade de vida, com retorno seguro às atividades do dia a dia e ao esporte.
-          </p>
-        </div>
-
-        <div class="sobre__lado revelar">
-          <figure class="sobre__foto">
-            <picture>
-              <source srcset="/assets/img/anny-e-lorena.avif" type="image/avif">
-              <img src="/assets/img/anny-e-lorena.jpg" alt="As fisioterapeutas Lorena Araújo e Anny Caroline ao lado do logo da L.A. Core na parede verde" width="1200" height="800" loading="lazy">
-            </picture>
-          </figure>
-
-          <ul class="pilares" style="list-style:none; padding:0">
-            <li class="pilar">
-              <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-coracao"/></svg></span>
-              <div><h3>Cuidado humanizado</h3><p>Escuta atenta e respeito ao seu tempo, à sua história e aos seus limites.</p></div>
-            </li>
-            <li class="pilar">
-              <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-pessoa"/></svg></span>
-              <div><h3>Plano individual</h3><p>Cada tratamento começa por uma avaliação completa e é pensado só para você.</p></div>
-            </li>
-            <li class="pilar">
-              <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-ciencia"/></svg></span>
-              <div><h3>Baseado em evidências</h3><p>Técnicas atualizadas e comprovadas cientificamente, com profissionais em constante formação.</p></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- ============================================ SERVIÇOS ============ -->
-    <section class="secao secao--alt" id="servicos" aria-labelledby="servicos-titulo">
+    <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
       <div class="container">
         <header class="cabecalho-secao cabecalho-secao--centro">
           <span class="selo">Serviços</span>
@@ -385,6 +335,49 @@
             <p>Técnicas manuais para aliviar dores, contraturas e o estresse do dia a dia.</p>
             <button class="servico__link" type="button" data-wpp-abrir data-wpp-servico="Massagem terapêutica">Agendar pelo WhatsApp <svg aria-hidden="true"><use href="#i-seta"/></svg></button>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== SOBRE ============= -->
+    <section class="secao secao--alt" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container sobre__grade">
+        <div class="sobre__texto revelar">
+          <span class="selo">Sobre a clínica</span>
+          <h2 id="sobre-titulo">Olá! Seja bem-vindo(a) à L.A. Core</h2>
+          <p style="margin-top:1.5rem">
+            A L.A. Core é uma clínica de fisioterapia comprometida com a excelência no
+            atendimento e com o bem-estar de cada paciente, com um corpo clínico
+            especializado e em constante atualização.
+          </p>
+          <p class="sobre__destaque">
+            Nosso objetivo é proporcionar melhora da dor, recuperação da funcionalidade
+            e qualidade de vida, com retorno seguro às atividades do dia a dia e ao esporte.
+          </p>
+        </div>
+
+        <div class="sobre__lado revelar">
+          <figure class="sobre__foto">
+            <picture>
+              <source srcset="/assets/img/anny-e-lorena.avif" type="image/avif">
+              <img src="/assets/img/anny-e-lorena.jpg" alt="As fisioterapeutas Lorena Araújo e Anny Caroline ao lado do logo da L.A. Core na parede verde" width="1200" height="800" loading="lazy">
+            </picture>
+          </figure>
+
+          <ul class="pilares" style="list-style:none; padding:0">
+            <li class="pilar">
+              <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-coracao"/></svg></span>
+              <div><h3>Cuidado humanizado</h3><p>Escuta atenta e respeito ao seu tempo, à sua história e aos seus limites.</p></div>
+            </li>
+            <li class="pilar">
+              <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-pessoa"/></svg></span>
+              <div><h3>Plano individual</h3><p>Cada tratamento começa por uma avaliação completa e é pensado só para você.</p></div>
+            </li>
+            <li class="pilar">
+              <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-ciencia"/></svg></span>
+              <div><h3>Baseado em evidências</h3><p>Técnicas atualizadas e comprovadas cientificamente, com profissionais em constante formação.</p></div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -460,8 +453,76 @@
       </div>
     </section>
 
+    <!-- ========================================== DEPOIMENTOS =========== -->
+    <!-- ATENÇÃO: substituir pelos depoimentos REAIS, com autorização por escrito
+         de cada paciente. Não publicar o site com estes exemplos. -->
+    <section class="secao" id="depoimentos" aria-labelledby="depoimentos-titulo">
+      <div class="container">
+        <header class="cabecalho-secao cabecalho-secao--centro">
+          <span class="selo">Depoimentos</span>
+          <h2 id="depoimentos-titulo">O que nossos pacientes dizem</h2>
+          <p>Pacientes da L.A. Core contam, com as próprias palavras, como foi o tratamento e o que mudou no dia a dia.</p>
+        </header>
+
+        <div class="depoimentos__conteudo">
+          <div class="video__moldura video__moldura--vertical revelar" data-video
+               data-video-src="/assets/video/depoimentos.mp4"
+               data-video-poster="/assets/img/video-capa.jpg"
+               data-video-titulo="Depoimentos de pacientes da L.A. Core">
+            <button class="video__capa" type="button" aria-label="Assistir ao vídeo com depoimentos de pacientes (1 minuto e 46 segundos)">
+              <picture>
+                <source srcset="/assets/img/video-capa.avif" type="image/avif">
+                <img src="/assets/img/video-capa.jpg" alt="" width="720" height="1280" loading="lazy">
+              </picture>
+              <span class="video__play"><svg aria-hidden="true"><use href="#i-play"/></svg> Assistir <span class="video__duracao">1:46</span></span>
+            </button>
+          </div>
+
+          <div class="depoimentos__lista" tabindex="0" role="region" aria-label="Depoimentos escritos. No celular, deslize para o lado para ver mais.">
+            <figure class="depoimento">
+              <div class="depoimento__estrelas" role="img" aria-label="5 de 5 estrelas">
+                <svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg>
+              </div>
+              <blockquote><p>[Depoimento real do paciente — ex.: sobre o atendimento, o acolhimento e como se sente hoje.]</p></blockquote>
+              <figcaption>
+                <span class="depoimento__avatar" aria-hidden="true">P</span>
+                <span><span class="depoimento__nome">[Nome do paciente]</span><br><span class="depoimento__info">Fisioterapia ortopédica</span></span>
+              </figcaption>
+            </figure>
+            <figure class="depoimento">
+              <div class="depoimento__estrelas" role="img" aria-label="5 de 5 estrelas">
+                <svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg>
+              </div>
+              <blockquote><p>[Depoimento real — ex.: mãe ou pai sobre o acompanhamento do bebê/criança.]</p></blockquote>
+              <figcaption>
+                <span class="depoimento__avatar" aria-hidden="true">P</span>
+                <span><span class="depoimento__nome">[Nome do responsável]</span><br><span class="depoimento__info">Fisioterapia pediátrica</span></span>
+              </figcaption>
+            </figure>
+            <figure class="depoimento">
+              <div class="depoimento__estrelas" role="img" aria-label="5 de 5 estrelas">
+                <svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg>
+              </div>
+              <blockquote><p>[Depoimento real — ex.: aluno(a) de Pilates sobre a rotina de aulas.]</p></blockquote>
+              <figcaption>
+                <span class="depoimento__avatar" aria-hidden="true">P</span>
+                <span><span class="depoimento__nome">[Nome do aluno]</span><br><span class="depoimento__info">Pilates</span></span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="depoimentos__rodape">
+          <!-- TODO: trocar pelo link de avaliações do Perfil da Empresa no Google -->
+          <a class="btn btn--contorno" href="https://www.google.com/maps/search/?api=1&amp;query=L.A.+Core+Fisioterapia+e+Pilates+Divin%C3%B3polis" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-google"/></svg> Ver avaliações no Google
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- ========================================= ESTRUTURA (carrossel) == -->
-    <section class="secao" id="estrutura" aria-labelledby="estrutura-titulo">
+    <section class="secao secao--alt" id="estrutura" aria-labelledby="estrutura-titulo">
       <div class="container">
         <header class="cabecalho-secao cabecalho-secao--centro">
           <span class="selo">Nosso espaço</span>
@@ -518,6 +579,7 @@
           <div class="carrossel__controles">
             <button class="carrossel__seta" type="button" data-anterior aria-label="Foto anterior"><svg aria-hidden="true"><use href="#i-esq"/></svg></button>
             <ol class="carrossel__pontos" aria-label="Escolher foto"></ol>
+            <p class="carrossel__contador" aria-hidden="true" data-contador>1 / 6</p>
             <button class="carrossel__seta" type="button" data-proximo aria-label="Próxima foto"><svg aria-hidden="true"><use href="#i-dir"/></svg></button>
             <button class="carrossel__pausa" type="button" data-pausa aria-pressed="false">
               <svg aria-hidden="true"><use href="#i-pausa"/></svg><span>Pausar</span>
@@ -528,89 +590,8 @@
       </div>
     </section>
 
-    <!-- ============================================== VÍDEO ============= -->
-    <section class="secao secao--alt video" id="video" aria-labelledby="video-titulo">
-      <div class="container video__grade">
-        <div class="revelar">
-          <span class="selo">Depoimentos em vídeo</span>
-          <h2 id="video-titulo">O que nossos pacientes dizem</h2>
-          <p style="margin-top:1rem; color:var(--texto-suave)">
-            Pacientes da L.A. Core contam, com as próprias palavras, como foi o tratamento
-            e o que mudou no dia a dia depois dos atendimentos de fisioterapia e Pilates.
-          </p>
-          <button class="btn btn--primario" type="button" data-wpp-abrir style="margin-top:1.5rem">
-            <svg aria-hidden="true"><use href="#i-whatsapp"/></svg> Agendar uma avaliação
-          </button>
-        </div>
-        <div class="video__moldura video__moldura--vertical revelar" data-video
-             data-video-src="/assets/video/depoimentos.mp4"
-             data-video-poster="/assets/img/video-capa.jpg"
-             data-video-titulo="Depoimentos de pacientes da L.A. Core">
-          <button class="video__capa" type="button" aria-label="Assistir ao vídeo com depoimentos de pacientes">
-            <picture>
-              <source srcset="/assets/img/video-capa.avif" type="image/avif">
-              <img src="/assets/img/video-capa.jpg" alt="" width="720" height="1280" loading="lazy">
-            </picture>
-            <span class="video__play"><svg aria-hidden="true"><use href="#i-play"/></svg> Assistir vídeo</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================== DEPOIMENTOS =========== -->
-    <!-- ATENÇÃO: substituir pelos depoimentos REAIS, com autorização por escrito
-         de cada paciente. Não publicar o site com estes exemplos. -->
-    <section class="secao" id="depoimentos" aria-labelledby="depoimentos-titulo">
-      <div class="container">
-        <header class="cabecalho-secao cabecalho-secao--centro">
-          <span class="selo">Depoimentos</span>
-          <h2 id="depoimentos-titulo">O que nossos pacientes dizem</h2>
-        </header>
-
-        <div class="depoimentos__grade">
-          <figure class="depoimento revelar">
-            <div class="depoimento__estrelas" role="img" aria-label="5 de 5 estrelas">
-              <svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg>
-            </div>
-            <blockquote><p>[Depoimento real do paciente — ex.: sobre o atendimento, o acolhimento e como se sente hoje.]</p></blockquote>
-            <figcaption>
-              <span class="depoimento__avatar" aria-hidden="true">P</span>
-              <span><span class="depoimento__nome">[Nome do paciente]</span><br><span class="depoimento__info">Fisioterapia ortopédica</span></span>
-            </figcaption>
-          </figure>
-          <figure class="depoimento revelar">
-            <div class="depoimento__estrelas" role="img" aria-label="5 de 5 estrelas">
-              <svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg>
-            </div>
-            <blockquote><p>[Depoimento real — ex.: mãe ou pai sobre o acompanhamento do bebê/criança.]</p></blockquote>
-            <figcaption>
-              <span class="depoimento__avatar" aria-hidden="true">P</span>
-              <span><span class="depoimento__nome">[Nome do responsável]</span><br><span class="depoimento__info">Fisioterapia pediátrica</span></span>
-            </figcaption>
-          </figure>
-          <figure class="depoimento revelar">
-            <div class="depoimento__estrelas" role="img" aria-label="5 de 5 estrelas">
-              <svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg><svg aria-hidden="true"><use href="#i-estrela"/></svg>
-            </div>
-            <blockquote><p>[Depoimento real — ex.: aluno(a) de Pilates sobre a rotina de aulas.]</p></blockquote>
-            <figcaption>
-              <span class="depoimento__avatar" aria-hidden="true">P</span>
-              <span><span class="depoimento__nome">[Nome do aluno]</span><br><span class="depoimento__info">Pilates</span></span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="depoimentos__rodape">
-          <!-- TODO: trocar pelo link de avaliações do Perfil da Empresa no Google -->
-          <a class="btn btn--contorno" href="https://www.google.com/maps/search/?api=1&amp;query=L.A.+Core+Fisioterapia+e+Pilates+Divin%C3%B3polis" target="_blank" rel="noopener noreferrer">
-            <svg aria-hidden="true"><use href="#i-google"/></svg> Ver avaliações no Google
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============================================ CONVÊNIOS =========== -->
-    <section class="secao secao--alt" aria-labelledby="convenios-titulo" style="padding-block:var(--e-8)">
+    <section class="secao" aria-labelledby="convenios-titulo" style="padding-block:var(--e-8)">
       <div class="container">
         <div class="convenios revelar">
           <div>
@@ -627,7 +608,7 @@
     </section>
 
     <!-- ================================================== FAQ ========== -->
-    <section class="secao" id="duvidas" aria-labelledby="duvidas-titulo">
+    <section class="secao secao--alt" id="duvidas" aria-labelledby="duvidas-titulo">
       <div class="container">
         <header class="cabecalho-secao cabecalho-secao--centro">
           <span class="selo">Dúvidas frequentes</span>
@@ -674,16 +655,30 @@
 
         <div class="contato__grade">
           <div class="contato__info">
-            <div class="info-bloco">
-              <span class="info-bloco__icone" aria-hidden="true"><svg><use href="#i-telefone"/></svg></span>
-              <div>
-                <h3>Telefone e WhatsApp</h3>
-                <ul class="info-bloco__lista">
-                  <li>Anny: <a href="tel:+5537991286155">(37) 99128-6155</a></li>
-                  <li>Lorena: <a href="tel:+5537999398070">(37) 99939-8070</a></li>
-                </ul>
-              </div>
-            </div>
+            <ul class="contato__pessoas">
+              <li class="contato-pessoa">
+                <h3 class="contato-pessoa__nome">Anny Caroline <span>(37) 99128-6155</span></h3>
+                <div class="contato-pessoa__botoes">
+                  <a class="btn btn--whatsapp" href="https://wa.me/5537991286155?text=Ol%C3%A1%2C%20Anny!%20Vim%20pelo%20site%20da%20L.A.%20Core%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer" data-wpp-profissional="anny">
+                    <svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp
+                  </a>
+                  <a class="btn btn--contorno" href="tel:+5537991286155" data-tel-profissional="anny" aria-label="Ligar para a Anny, (37) 99128-6155">
+                    <svg aria-hidden="true"><use href="#i-telefone"/></svg> Ligar
+                  </a>
+                </div>
+              </li>
+              <li class="contato-pessoa">
+                <h3 class="contato-pessoa__nome">Lorena Araújo <span>(37) 99939-8070</span></h3>
+                <div class="contato-pessoa__botoes">
+                  <a class="btn btn--whatsapp" href="https://wa.me/5537999398070?text=Ol%C3%A1%2C%20Lorena!%20Vim%20pelo%20site%20da%20L.A.%20Core%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer" data-wpp-profissional="lorena">
+                    <svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp
+                  </a>
+                  <a class="btn btn--contorno" href="tel:+5537999398070" data-tel-profissional="lorena" aria-label="Ligar para a Lorena, (37) 99939-8070">
+                    <svg aria-hidden="true"><use href="#i-telefone"/></svg> Ligar
+                  </a>
+                </div>
+              </li>
+            </ul>
             <div class="info-bloco">
               <span class="info-bloco__icone" aria-hidden="true"><svg><use href="#i-email"/></svg></span>
               <div><h3>E-mail</h3><p><a href="mailto:clinicalacore@gmail.com">clinicalacore@gmail.com</a></p></div>
@@ -696,6 +691,7 @@
                   <li>Segunda a sexta: 7h às 20h</li>
                   <li>Sábado: 8h às 11h</li>
                 </ul>
+                <p class="status-horario" data-status-horario hidden></p>
               </div>
             </div>
             <div class="info-bloco">
@@ -708,68 +704,76 @@
             </div>
           </div>
 
-          <form class="formulario" action="/api/contato.php" method="post" novalidate data-formulario>
-            <h3>Envie uma mensagem</h3>
-            <p style="margin-top:.5rem">Respondemos em até 1 dia útil. Campos com * são obrigatórios.</p>
+          <!-- No celular o formulário fica recolhido (WhatsApp é o canal principal);
+               no computador o main.js abre a caixa e esconde o resumo. -->
+          <details class="formulario-caixa" data-formulario-caixa>
+            <summary class="formulario-caixa__resumo">
+              <svg aria-hidden="true"><use href="#i-email"/></svg>
+              Prefere enviar uma mensagem por escrito?
+            </summary>
+            <form class="formulario" action="/api/contato.php" method="post" novalidate data-formulario>
+              <h3>Envie uma mensagem</h3>
+              <p style="margin-top:.5rem">Respondemos em até 1 dia útil. Campos com * são obrigatórios.</p>
 
-            <div class="formulario__campos">
-              <div class="formulario__linha">
-                <div class="campo">
-                  <label for="f-nome">Seu nome *</label>
-                  <input id="f-nome" name="nome" type="text" autocomplete="name" required maxlength="100" aria-describedby="f-nome-erro">
-                  <p class="campo__erro" id="f-nome-erro">Por favor, escreva seu nome.</p>
+              <div class="formulario__campos">
+                <div class="formulario__linha">
+                  <div class="campo">
+                    <label for="f-nome">Seu nome *</label>
+                    <input id="f-nome" name="nome" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" required maxlength="100" aria-describedby="f-nome-erro">
+                    <p class="campo__erro" id="f-nome-erro">Por favor, escreva seu nome.</p>
+                  </div>
+                  <div class="campo">
+                    <label for="f-telefone">Telefone / WhatsApp *</label>
+                    <input id="f-telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" required placeholder="(37) 99999-9999" maxlength="16" aria-describedby="f-telefone-erro">
+                    <p class="campo__erro" id="f-telefone-erro">Informe um telefone com DDD, por exemplo (37) 99999-9999.</p>
+                  </div>
                 </div>
                 <div class="campo">
-                  <label for="f-telefone">Telefone / WhatsApp *</label>
-                  <input id="f-telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(37) 99999-9999" maxlength="16" aria-describedby="f-telefone-erro">
-                  <p class="campo__erro" id="f-telefone-erro">Informe um telefone com DDD, por exemplo (37) 99999-9999.</p>
+                  <label for="f-email">E-mail <span class="campo__opcional">(opcional)</span></label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" autocapitalize="off" enterkeyhint="next" maxlength="120" aria-describedby="f-email-erro">
+                  <p class="campo__erro" id="f-email-erro">Este e-mail parece incompleto. Confira, por exemplo: nome@gmail.com</p>
                 </div>
-              </div>
-              <div class="campo">
-                <label for="f-email">E-mail <span class="campo__opcional">(opcional)</span></label>
-                <input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" aria-describedby="f-email-erro">
-                <p class="campo__erro" id="f-email-erro">Este e-mail parece incompleto. Confira, por exemplo: nome@gmail.com</p>
-              </div>
-              <div class="campo">
-                <label for="f-servico">Assunto *</label>
-                <select id="f-servico" name="servico" required aria-describedby="f-servico-erro">
-                  <option value="">Escolha uma opção</option>
-                  <option>Avaliação fisioterapêutica</option>
-                  <option>Fisioterapia Traumato-Ortopédica</option>
-                  <option>Fisioterapia Pediátrica</option>
-                  <option>Fisioterapia Geriátrica</option>
-                  <option>Pilates</option>
-                  <option>Recovery / liberação miofascial</option>
-                  <option>Massagem terapêutica</option>
-                  <option>Outro assunto</option>
-                </select>
-                <p class="campo__erro" id="f-servico-erro">Escolha o assunto da sua mensagem.</p>
-              </div>
-              <div class="campo">
-                <label for="f-mensagem">Mensagem *</label>
-                <textarea id="f-mensagem" name="mensagem" required maxlength="2000" aria-describedby="f-mensagem-erro"></textarea>
-                <p class="campo__erro" id="f-mensagem-erro">Escreva sua mensagem.</p>
-              </div>
+                <div class="campo">
+                  <label for="f-servico">Assunto *</label>
+                  <select id="f-servico" name="servico" required aria-describedby="f-servico-erro">
+                    <option value="">Escolha uma opção</option>
+                    <option>Avaliação fisioterapêutica</option>
+                    <option>Fisioterapia Traumato-Ortopédica</option>
+                    <option>Fisioterapia Pediátrica</option>
+                    <option>Fisioterapia Geriátrica</option>
+                    <option>Pilates</option>
+                    <option>Recovery / liberação miofascial</option>
+                    <option>Massagem terapêutica</option>
+                    <option>Outro assunto</option>
+                  </select>
+                  <p class="campo__erro" id="f-servico-erro">Escolha o assunto da sua mensagem.</p>
+                </div>
+                <div class="campo">
+                  <label for="f-mensagem">Mensagem *</label>
+                  <textarea id="f-mensagem" name="mensagem" required maxlength="2000" aria-describedby="f-mensagem-erro"></textarea>
+                  <p class="campo__erro" id="f-mensagem-erro">Escreva sua mensagem.</p>
+                </div>
 
-              <!-- Anti-spam: invisível para pessoas, preenchido por robôs -->
-              <div class="campo campo--armadilha" aria-hidden="true">
-                <label for="f-site">Não preencha</label>
-                <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off">
-              </div>
-              <input type="hidden" name="inicio" value="">
+                <!-- Anti-spam: invisível para pessoas, preenchido por robôs -->
+                <div class="campo campo--armadilha" aria-hidden="true">
+                  <label for="f-site">Não preencha</label>
+                  <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <input type="hidden" name="inicio" value="">
 
-              <div class="campo campo--check">
-                <input id="f-consentimento" name="consentimento" type="checkbox" value="sim" required aria-describedby="f-consentimento-erro">
-                <label for="f-consentimento">Autorizo a L.A. Core a usar meus dados para responder este contato, conforme a <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</label>
-                <p class="campo__erro" id="f-consentimento-erro">Marque esta caixa para podermos responder.</p>
-              </div>
+                <div class="campo campo--check">
+                  <input id="f-consentimento" name="consentimento" type="checkbox" value="sim" required aria-describedby="f-consentimento-erro">
+                  <label for="f-consentimento">Autorizo a L.A. Core a usar meus dados para responder este contato, conforme a <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</label>
+                  <p class="campo__erro" id="f-consentimento-erro">Marque esta caixa para podermos responder.</p>
+                </div>
 
-              <button class="btn btn--primario btn--bloco" type="submit">
-                <svg aria-hidden="true"><use href="#i-email"/></svg> Enviar mensagem
-              </button>
-            </div>
-            <p class="formulario__status" role="status" aria-live="polite" data-status-form></p>
-          </form>
+                <button class="btn btn--primario btn--bloco" type="submit">
+                  <svg aria-hidden="true"><use href="#i-email"/></svg> Enviar mensagem
+                </button>
+              </div>
+              <p class="formulario__status" role="status" aria-live="polite" data-status-form></p>
+            </form>
+          </details>
         </div>
       </div>
     </section>
@@ -783,15 +787,6 @@
         </header>
 
         <div class="mapa__grade">
-          <div class="mapa__moldura" data-mapa
-               data-mapa-src="https://www.google.com/maps?q=Rua+Goi%C3%A1s,+2367+-+Ipiranga,+Divin%C3%B3polis+-+MG,+35502-027&amp;output=embed">
-            <button class="mapa__capa" type="button" aria-label="Carregar mapa interativo do Google Maps">
-              <span class="mapa__pino" aria-hidden="true"><svg><use href="#i-pino"/></svg></span>
-              <span class="mapa__capa-texto">Rua Goiás, 2367 - Ipiranga</span>
-              <span class="btn btn--primario">Toque para ver o mapa</span>
-            </button>
-          </div>
-
           <div class="mapa__endereco">
             <address>
               <strong>L.A. Core Fisioterapia e Pilates</strong><br>
@@ -813,6 +808,15 @@
                 <p><strong>Descendo a Goiás (sentido contrário):</strong> vire à direita ou à esquerda na Rua Itambé.</p>
               </div>
             </div>
+          </div>
+
+          <div class="mapa__moldura" data-mapa
+               data-mapa-src="https://www.google.com/maps?q=Rua+Goi%C3%A1s,+2367+-+Ipiranga,+Divin%C3%B3polis+-+MG,+35502-027&amp;output=embed">
+            <button class="mapa__capa" type="button" aria-label="Carregar mapa interativo do Google Maps">
+              <span class="mapa__pino" aria-hidden="true"><svg><use href="#i-pino"/></svg></span>
+              <span class="mapa__capa-texto">Rua Goiás, 2367 - Ipiranga</span>
+              <span class="btn btn--primario">Toque para ver o mapa</span>
+            </button>
           </div>
         </div>
       </div>
@@ -873,14 +877,20 @@
 
   <!-- ====================================== WHATSAPP FLUTUANTE ========== -->
   <div class="wpp" data-wpp>
+    <div class="wpp__fundo" data-wpp-fechar hidden></div>
     <div class="wpp__painel" id="wpp-painel" role="dialog" aria-modal="false" aria-labelledby="wpp-titulo" hidden>
       <div class="wpp__topo">
-        <h2 id="wpp-titulo">Com quem você quer falar?</h2>
-        <p>Escolha a fisioterapeuta. Respondemos no horário de atendimento.</p>
+        <div>
+          <h2 id="wpp-titulo">Com quem você quer falar?</h2>
+          <p data-wpp-subtitulo>Escolha a fisioterapeuta. Respondemos no horário de atendimento.</p>
+        </div>
+        <button class="wpp__fechar" type="button" aria-label="Fechar" data-wpp-fechar>
+          <svg aria-hidden="true"><use href="#i-fechar"/></svg>
+        </button>
       </div>
       <ul class="wpp__lista">
         <li>
-          <a class="wpp__opcao" href="https://wa.me/5537991286155" target="_blank" rel="noopener noreferrer" data-wpp-profissional="anny" data-wpp-nome="Anny">
+          <a class="wpp__opcao" href="https://wa.me/5537991286155" target="_blank" rel="noopener noreferrer" data-wpp-profissional="anny" data-wpp-nome="Anny" data-tel="+5537991286155">
             <picture>
               <source srcset="/assets/img/anny-avatar.avif" type="image/avif">
               <img class="wpp__foto" src="/assets/img/anny-avatar.jpg" alt="" width="58" height="58" loading="lazy">
@@ -893,7 +903,7 @@
           </a>
         </li>
         <li>
-          <a class="wpp__opcao" href="https://wa.me/5537999398070" target="_blank" rel="noopener noreferrer" data-wpp-profissional="lorena" data-wpp-nome="Lorena">
+          <a class="wpp__opcao" href="https://wa.me/5537999398070" target="_blank" rel="noopener noreferrer" data-wpp-profissional="lorena" data-wpp-nome="Lorena" data-tel="+5537999398070">
             <picture>
               <source srcset="/assets/img/lorena-avatar.avif" type="image/avif">
               <img class="wpp__foto" src="/assets/img/lorena-avatar.jpg" alt="" width="58" height="58" loading="lazy">
@@ -906,13 +916,27 @@
           </a>
         </li>
       </ul>
-      <p class="wpp__rodape">Seg–Sex 7h–20h · Sáb 8h–11h</p>
+      <p class="wpp__rodape">
+        <span class="status-horario" data-status-horario hidden></span>
+        Seg–Sex 7h–20h · Sáb 8h–11h
+      </p>
     </div>
 
     <button class="wpp__botao" type="button" aria-expanded="false" aria-controls="wpp-painel">
       <svg class="wpp__icone-abrir" aria-hidden="true"><use href="#i-whatsapp"/></svg>
       <svg class="wpp__icone-fechar" aria-hidden="true"><use href="#i-fechar"/></svg>
       <span class="wpp__rotulo">Fale conosco</span>
+    </button>
+  </div>
+
+  <!-- Barra fixa de ações no celular (substitui o botão flutuante em telas pequenas).
+       Fica escondida enquanto os botões do topo da página estão visíveis. -->
+  <div class="barra-acoes" data-barra-acoes data-oculta="true">
+    <button class="btn btn--whatsapp" type="button" data-wpp-abrir>
+      <svg aria-hidden="true"><use href="#i-whatsapp"/></svg> WhatsApp
+    </button>
+    <button class="btn btn--contorno" type="button" data-wpp-abrir data-wpp-modo="ligar">
+      <svg aria-hidden="true"><use href="#i-telefone"/></svg> Ligar
     </button>
   </div>
 

@@ -45,7 +45,7 @@
   --t-lg:   clamp(1.5rem,  1vw  + 1.25rem, 1.9rem);
   --t-xl:   clamp(1.9rem,  2vw  + 1.4rem,  2.6rem);
   --t-2xl:  clamp(2.3rem,  3vw  + 1.5rem,  3.4rem);
-  --t-3xl:  clamp(2.7rem,  4vw  + 1.6rem,  4.2rem);
+  --t-3xl:  clamp(2.2rem,  4vw  + 1.4rem,  4.2rem);
 
   --linha-titulo: 1.15;
   --linha-corpo:  1.7;
@@ -58,6 +58,8 @@
   --secao-y: clamp(3.5rem, 7vw, 6.5rem);
   --pagina-x: clamp(1rem, 4vw, 2.5rem);
   --largura-max: 1200px;
+  /* Cabeçalho mais baixo no celular para sobrar tela para o conteúdo */
+  --altura-cabecalho: 64px;
 
   /* ---- Formas e profundidade ---- */
   --r-sm: 10px;  --r-md: 18px;  --r-lg: 26px;  --r-pill: 999px;
@@ -71,6 +73,10 @@
   --transicao: 220ms cubic-bezier(.4, 0, .2, 1);
   --anel: 3px solid var(--marrom);
   --anel-halo: 0 0 0 6px rgba(205, 176, 122, .6);
+}
+
+@media (min-width: 900px) {
+  :root { --altura-cabecalho: 82px; }
 }
 
 /* Anel de foco legível sobre fundos escuros */
