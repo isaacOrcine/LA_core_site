@@ -7,3 +7,6 @@
 lacore-config.php
 *.log
 *.bak
+
+# Originais pesados (fotos/vídeos brutos) ficam fora do repositório
+fotos/
