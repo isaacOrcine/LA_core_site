@@ -19,6 +19,14 @@ ErrorDocument 404 /404.html
   RewriteRule ^index\.html$ / [L,R=301]
 </IfModule>
 
+# ---- Arquivos internos: nunca públicos, mesmo que sejam enviados por engano ----
+<IfModule mod_alias.c>
+  RedirectMatch 404 ^/(fotos|\.git)(/|$)
+</IfModule>
+<FilesMatch "^\.|\.(md|bak|log|sql|env|sh)$">
+  Require all denied
+</FilesMatch>
+
 # ---- Compressão ----
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml application/manifest+json
@@ -29,8 +37,10 @@ ErrorDocument 404 /404.html
   ExpiresActive On
   ExpiresDefault "access plus 1 week"
   ExpiresByType text/html "access plus 0 seconds"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
+  # CSS e JS não têm versão no nome do arquivo: 1 semana para as atualizações chegarem logo
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
   ExpiresByType image/avif "access plus 6 months"
   ExpiresByType image/webp "access plus 6 months"
   ExpiresByType image/jpeg "access plus 6 months"
@@ -41,18 +51,29 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # ---- Cabeçalhos de segurança ----
+# CSP (o que cada parte libera):
+#   script-src / style-src 'self'  → só arquivos do próprio site (sem scripts/estilos inline)
+#   font-src 'self'                → fontes hospedadas em /assets/fonts
+#   img-src 'self' data:           → imagens do site + a seta do <select> (data: URI no CSS)
+#   frame-src https://www.google.com → mapa do Google (só carrega depois do clique)
+#   connect-src 'self'             → o formulário envia para /api/contato.php
+# Se um dia ativar Google Analytics/Tag Manager, será preciso liberar os domínios deles em
+# script-src e connect-src (e pedir consentimento: ver política de privacidade).
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set X-Frame-Options "DENY"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  # HSTS: 1 ano. Só acrescente "includeSubDomains; preload" se TODOS os subdomínios tiverem HTTPS.
   Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com https://www.youtube-nocookie.com; connect-src 'self' https://www.google-analytics.com; media-src 'self'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # ---- Tipos de arquivo ----
 AddType application/manifest+json .webmanifest
 AddType image/avif .avif
+AddType font/woff2 .woff2
 AddType text/plain .txt
 AddDefaultCharset utf-8
 AddCharset utf-8 .txt .xml .css .js .webmanifest

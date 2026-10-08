@@ -1,28 +1,23 @@
 # L.A. Core Fisioterapia e Pilates — Divinópolis/MG
 # Todo o conteúdo público pode ser indexado por buscadores e assistentes de IA.
+# (robots.txt não é segurança: não coloque aqui nada que precise ficar escondido.)
 
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Assistentes e buscadores de IA — liberados explicitamente
+# Assistentes e buscadores de IA — liberados explicitamente.
+# Cada robô com regra própria ignora o grupo "*", por isso o Disallow se repete aqui.
 User-agent: GPTBot
-Allow: /
 User-agent: OAI-SearchBot
-Allow: /
 User-agent: ChatGPT-User
-Allow: /
 User-agent: ClaudeBot
-Allow: /
 User-agent: Claude-SearchBot
-Allow: /
 User-agent: Claude-User
-Allow: /
 User-agent: PerplexityBot
-Allow: /
 User-agent: Google-Extended
-Allow: /
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /api/
 
 Sitemap: https://lacorefisio.com.br/sitemap.xml

@@ -8,9 +8,11 @@
 
   /* ---------- Cabeçalho: sombra ao rolar ---------- */
   var cabecalho = document.querySelector('.cabecalho');
-  function aoRolar() { cabecalho.dataset.rolado = String(window.scrollY > 8); }
-  window.addEventListener('scroll', aoRolar, { passive: true });
-  aoRolar();
+  if (cabecalho) {
+    var aoRolar = function () { cabecalho.dataset.rolado = String(window.scrollY > 8); };
+    window.addEventListener('scroll', aoRolar, { passive: true });
+    aoRolar();
+  }
 
   /* ---------- Barra de ações no celular ----------
      Escondida enquanto os botões do topo estão na tela (seriam repetidos) e
@@ -39,26 +41,28 @@
   var menuBotao = document.querySelector('.menu-botao');
   var menu = document.getElementById('menu-movel');
 
-  function alternarMenu(abrir) {
-    menu.dataset.aberto = String(abrir);
-    menuBotao.setAttribute('aria-expanded', String(abrir));
-    menuBotao.querySelector('.menu-botao__texto').textContent = abrir ? 'Fechar' : 'Menu';
-    document.body.style.overflow = abrir ? 'hidden' : '';
-    /* O menu já tem seu próprio botão de WhatsApp: esconde o flutuante e a barra para não sobrepor */
-    var wpp = document.querySelector('[data-wpp]');
-    if (wpp) wpp.hidden = abrir;
-    if (barra) barra.hidden = abrir;
-    if (abrir) menu.querySelector('a').focus();
+  if (menuBotao && menu) {
+    var alternarMenu = function (abrir) {
+      menu.dataset.aberto = String(abrir);
+      menuBotao.setAttribute('aria-expanded', String(abrir));
+      menuBotao.querySelector('.menu-botao__texto').textContent = abrir ? 'Fechar' : 'Menu';
+      document.body.style.overflow = abrir ? 'hidden' : '';
+      /* O menu já tem seu próprio botão de WhatsApp: esconde o flutuante e a barra para não sobrepor */
+      var wpp = document.querySelector('[data-wpp]');
+      if (wpp) wpp.hidden = abrir;
+      if (barra) barra.hidden = abrir;
+      if (abrir) menu.querySelector('a').focus();
+    };
+    menuBotao.addEventListener('click', function () {
+      alternarMenu(menu.dataset.aberto !== 'true');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a, [data-wpp-abrir]')) alternarMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.dataset.aberto === 'true') { alternarMenu(false); menuBotao.focus(); }
+    });
   }
-  menuBotao.addEventListener('click', function () {
-    alternarMenu(menu.dataset.aberto !== 'true');
-  });
-  menu.addEventListener('click', function (e) {
-    if (e.target.closest('a, [data-wpp-abrir]')) alternarMenu(false);
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menu.dataset.aberto === 'true') { alternarMenu(false); menuBotao.focus(); }
-  });
 
   /* ---------- Tamanho do texto (A- / A / A+) ---------- */
   var botoesEscala = document.querySelectorAll('[data-escala]');
@@ -122,7 +126,9 @@
       f.src = moldura.dataset.mapaSrc;
       f.title = 'Mapa: L.A. Core, Rua Goiás 2367, Ipiranga, Divinópolis';
       f.loading = 'lazy';
-      f.referrerPolicy = 'no-referrer-when-downgrade';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      /* O mapa só precisa de scripts próprios e de abrir links em nova aba */
+      f.sandbox = 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox';
       f.allowFullscreen = true;
       moldura.innerHTML = '';
       moldura.appendChild(f);
@@ -192,8 +198,6 @@
   if (form) {
     var statusForm = form.querySelector('[data-status-form]');
     var telefone = form.querySelector('#f-telefone');
-    form.elements.inicio.value = String(Date.now());
-
     /* Máscara (37) 99999-9999 enquanto digita */
     telefone.addEventListener('input', function () {
       var d = telefone.value.replace(/\D/g, '').slice(0, 11);
@@ -227,6 +231,9 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      /* Tempo desde que a página abriu (robôs enviam em menos de 3s). Medido no próprio
+         aparelho: não depende de o relógio do celular estar certo. */
+      form.elements.tempo.value = String(Math.round(performance.now()));
       var primeiroErro = null;
       campos.forEach(function (c) { if (!validarCampo(c) && !primeiroErro) primeiroErro = c; });
       if (primeiroErro) {

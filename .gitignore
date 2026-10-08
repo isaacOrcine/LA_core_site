@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Segredos e arquivos locais (a senha do e-mail fica FORA do site: ../lacore-config.php)
+.env
+.env.*
+lacore-config.php
+*.log
+*.bak

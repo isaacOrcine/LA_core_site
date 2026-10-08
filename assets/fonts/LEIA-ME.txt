@@ -1,0 +1,7 @@
+Fontes hospedadas localmente (subconjunto "latin", fonte variável, formato woff2).
+Baixadas do Google Fonts para o site não depender de servidores de terceiros.
+
+- Figtree           — Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree)
+- Playfair Display  — Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display)
+
+Ambas licenciadas sob a SIL Open Font License 1.1: https://openfontlicense.org

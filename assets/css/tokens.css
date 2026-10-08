@@ -3,6 +3,21 @@
    Paleta derivada da identidade visual da marca.
    ========================================================================== */
 
+/* ---- Fontes hospedadas no próprio site (sem chamadas ao Google) ----
+   Fontes variáveis, subconjunto latino (cobre todo o português). */
+@font-face {
+  font-family: "Figtree"; font-style: normal; font-weight: 300 900; font-display: swap;
+  src: url("/assets/fonts/figtree-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display"; font-style: normal; font-weight: 400 900; font-display: swap;
+  src: url("/assets/fonts/playfair-display-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display"; font-style: italic; font-weight: 400 900; font-display: swap;
+  src: url("/assets/fonts/playfair-display-italic-latin.woff2") format("woff2");
+}
+
 :root {
   /* ---- Cores da marca ---- */
   --verde-escuro:   #35512A;
@@ -14,7 +29,7 @@
   --creme:          #EFE8DE;
   --creme-claro:    #F8F4EE;
   --marrom:         #4B3A2C;
-  --marrom-medio:   #89663E;
+  --marrom-medio:   #82603A;  /* 4.7:1 sobre --creme (AA); era #89663E = 4.3:1 */
   --branco:         #FDFCFA;
   --whatsapp:       #0F7A41;  /* verde WhatsApp escurecido: 5.4:1 com branco (AA) */
 
@@ -38,7 +53,7 @@
   --fonte-titulo: "Playfair Display", "Iowan Old Style", Georgia, serif;
   --fonte-corpo:  "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
 
-  --t-xs:   0.9375rem;                              /* 15px  */
+  --t-xs:   1rem;                                   /* 16px (mínimo do site) */
   --t-sm:   1.0625rem;                              /* 17px  */
   --t-base: 1.1875rem;                              /* 19px  */
   --t-md:   clamp(1.25rem, 0.5vw + 1.13rem, 1.4rem);

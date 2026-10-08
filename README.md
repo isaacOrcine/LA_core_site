@@ -24,7 +24,7 @@ O formulário só envia de verdade no servidor (precisa de PHP). Localmente ele 
 | **Depoimentos reais** com autorização por escrito | `index.html`, seção `#depoimentos` | ⚠️ **não publicar com os exemplos** |
 | **Link do Perfil da Empresa no Google** | `index.html` (botão "Ver avaliações" e rodapé) | ⏳ |
 | **Imagem de compartilhamento** 1200×630 | `assets/img/og-lacore.jpg` | ✅ |
-| **Ícone Apple** 180×180 | `assets/img/apple-touch-icon.png` | ⏳ |
+| **Ícone Apple** 180×180 | `assets/img/apple-touch-icon.png` | ⏳ provisório (gerado a partir do `favicon.svg`; trocar junto com o logo oficial) |
 
 ## Publicar na Hostinger
 
@@ -46,6 +46,8 @@ O formulário só envia de verdade no servidor (precisa de PHP). Localmente ele 
 - **Perfil da Empresa no Google**: criar/verificar, com nome, endereço e telefone **idênticos** aos do site.
 - **PageSpeed Insights** (pagespeed.web.dev): meta ≥ 95 no celular, depois de trocar as fotos por versões otimizadas (WebP, ~200 KB cada).
 - Testar os botões de WhatsApp em um celular real.
+- **Segurança**: conferir os cabeçalhos em securityheaders.com. A CSP (no `.htaccess`) só libera o próprio site e o mapa do Google; se um dia ativar Google Analytics/Tag Manager, será preciso liberar o domínio deles ali (e pedir consentimento).
+- Se todas as mensagens do formulário forem recusadas com "várias mensagens na última hora", o servidor está atrás de um proxy/CDN e o limite por IP em `api/contato.php` precisa ler o IP real (cabeçalho `X-Forwarded-For` ou equivalente).
 
 ## Estrutura
 
@@ -58,6 +60,8 @@ robots.txt · sitemap.xml · llms.txt    busca e IA
 .htaccess                   HTTPS, cache, compressão, segurança
 assets/css/tokens.css       paleta e tipografia (mude cores aqui)
 assets/css/style.css        estilos
+assets/js/escala.js         aplica o tamanho de texto salvo antes da pintura (roda no <head>)
+assets/fonts/               Figtree e Playfair Display hospedadas no site (OFL; ver LEIA-ME.txt)
 assets/js/whatsapp.js       botão flutuante (computador) / barra de ações (celular), com escolha Anny / Lorena
 assets/js/carousel.js       carrossel de fotos
 assets/js/main.js           menu, A-/A/A+, barra de ações, "aberto agora", mapa, vídeo, formulário

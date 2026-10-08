@@ -41,7 +41,7 @@ h3 { font-size: var(--t-lg); }
 p  { text-wrap: pretty; }
 
 a { color: var(--marrom-medio); text-underline-offset: .22em; }
-a:hover { color: var(--verde-escuro); }
+@media (hover: hover) { a:hover { color: var(--verde-escuro); } }
 
 :focus-visible {
   outline: var(--anel);
@@ -72,6 +72,7 @@ a:hover { color: var(--verde-escuro); }
 .secao--alt     { background: var(--bg-alt); }
 .secao--escura  { background: var(--bg-escuro); color: var(--texto-inverso); }
 .secao--verde   { background: var(--bg-verde); color: var(--texto-inverso); }
+.secao--compacta { padding-block: var(--e-8); }
 .secao--escura h2, .secao--verde h2,
 .secao--escura h3, .secao--verde h3 { color: var(--branco); }
 .secao--escura p, .secao--verde p { color: var(--texto-inverso-suave); }
@@ -98,17 +99,15 @@ a:hover { color: var(--verde-escuro); }
   transition: background var(--transicao), color var(--transicao),
               border-color var(--transicao), transform var(--transicao);
 }
-@media (hover: hover) {
-  .btn:hover { transform: translateY(-2px); }
-  .btn:active { transform: translateY(0); }
-}
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); } }
+.btn:active { transform: scale(.98); }
 .btn svg { width: 1.4em; height: 1.4em; flex: none; }
 
 .btn--primario   { background: var(--verde-escuro); color: var(--branco); }
-.btn--primario:hover { background: #2A4021; color: var(--branco); }
+@media (hover: hover) { .btn--primario:hover { background: #2A4021; color: var(--branco); } }
 
 .btn--whatsapp   { background: var(--whatsapp); color: #fff; }
-.btn--whatsapp:hover { background: #0B6134; color: #fff; }
+@media (hover: hover) { .btn--whatsapp:hover { background: #0B6134; color: #fff; } }
 
 .btn--contorno   { border-color: var(--marrom); color: var(--marrom); background: transparent; }
 @media (hover: hover) { .btn--contorno:hover { background: var(--marrom); color: var(--branco); } }
@@ -136,7 +135,7 @@ a:hover { color: var(--verde-escuro); }
   display: flex; align-items: center; justify-content: space-between;
   gap: var(--e-4); min-height: var(--altura-cabecalho);
 }
-.logo { display: flex; align-items: center; gap: var(--e-3); text-decoration: none; flex: none; }
+.logo { display: flex; align-items: center; gap: var(--e-3); min-height: 44px; text-decoration: none; flex: none; }
 .logo img { height: 40px; width: auto; }
 .logo__texto { display: flex; flex-direction: column; line-height: 1.1; }
 .logo__nome {
@@ -156,9 +155,8 @@ a:hover { color: var(--verde-escuro); }
   text-decoration: none; border-radius: var(--r-pill);
   transition: background var(--transicao), color var(--transicao);
 }
-.nav__link:hover, .nav__link[aria-current="true"] {
-  background: var(--creme); color: var(--verde-escuro);
-}
+.nav__link[aria-current="true"] { background: var(--creme); color: var(--verde-escuro); }
+@media (hover: hover) { .nav__link:hover { background: var(--creme); color: var(--verde-escuro); } }
 .cabecalho__acoes { display: flex; align-items: center; gap: var(--e-3); }
 
 /* Controle de tamanho de fonte */
@@ -168,15 +166,17 @@ a:hover { color: var(--verde-escuro); }
   border-radius: var(--r-pill); padding: 3px;
 }
 .fonte-controle__btn {
-  min-width: 42px; height: 42px; border: 0; background: transparent;
+  min-width: 44px; height: 44px; border: 0; background: transparent;
   border-radius: 50%; font-weight: 700; color: var(--marrom);
   transition: background var(--transicao);
 }
-.fonte-controle__btn:hover { background: var(--branco); }
+@media (hover: hover) { .fonte-controle__btn:hover { background: var(--branco); } }
 .fonte-controle__btn[aria-pressed="true"] { background: var(--marrom); color: var(--branco); }
 .fonte-controle__btn--p { font-size: 13px; }
 .fonte-controle__btn--m { font-size: 16px; }
 .fonte-controle__btn--g { font-size: 20px; }
+/* Cópia do controle dentro do menu do celular */
+.fonte-controle--menu { display: flex; margin-top: var(--e-5); width: max-content; }
 
 .menu-botao {
   display: inline-flex; align-items: center; gap: var(--e-2);
@@ -200,7 +200,7 @@ a:hover { color: var(--verde-escuro); }
   color: var(--texto); text-decoration: none;
   border-bottom: 1px solid var(--borda);
 }
-.menu-movel a:hover { color: var(--verde-escuro); }
+@media (hover: hover) { .menu-movel a:hover { color: var(--verde-escuro); } }
 .menu-movel .btn { margin-top: var(--e-5); }
 
 @media (max-width: 379px) { .logo__sub { display: none; } }
@@ -214,7 +214,7 @@ a:hover { color: var(--verde-escuro); }
   .nav { display: block; }
   .fonte-controle { display: flex; }
   .menu-botao { display: none; }
-  .menu-movel { display: none !important; }
+  .menu-movel, .menu-movel[data-aberto="true"] { display: none; }
 }
 
 /* ------------------------------------------------------------- 5. Hero -- */
@@ -264,6 +264,7 @@ a:hover { color: var(--verde-escuro); }
 
 /* ------------------------------------------------------------ 6. Sobre -- */
 .sobre__grade { display: grid; gap: var(--e-7); }
+.sobre__texto h2 + p { margin-top: var(--e-5); }
 .sobre__texto p + p { margin-top: var(--e-4); }
 .sobre__texto p { color: var(--texto-suave); max-width: var(--medida); }
 .sobre__destaque {
@@ -281,7 +282,7 @@ a:hover { color: var(--verde-escuro); }
 }
 .sobre__foto picture { height: 100%; }
 .sobre__foto img { width: 100%; height: 100%; object-fit: cover; }
-.pilares { display: grid; gap: var(--e-4); }
+.pilares { display: grid; gap: var(--e-4); list-style: none; padding: 0; }
 .pilar {
   display: flex; gap: var(--e-4); padding: var(--e-4);
   background: var(--superficie); border: 1px solid var(--borda);
@@ -383,6 +384,7 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
 }
 .secao--escura .profissional p { color: var(--texto-suave); }
 .profissional__lista { list-style: none; padding: 0; display: grid; gap: var(--e-2); }
+.profissional__subtitulo + .profissional__lista { margin-top: var(--e-2); }
 .profissional__lista li {
   display: flex; gap: var(--e-3); font-size: var(--t-sm); color: var(--texto-suave);
 }
@@ -458,7 +460,6 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
   background: transparent; font-size: var(--t-sm); font-weight: 600; color: var(--marrom);
 }
 .carrossel__pausa svg { width: 18px; height: 18px; }
-.carrossel__status { font-size: var(--t-sm); color: var(--texto-suave); font-weight: 600; }
 
 @media (min-width: 700px)  {
   .carrossel__slide { flex-basis: calc(50% - var(--e-2)); aspect-ratio: 4 / 3; }
@@ -539,7 +540,6 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
   font-weight: 700; font-size: 1.1rem;
 }
 .depoimento__nome { font-weight: 700; }
-.depoimento__info { font-size: var(--t-xs); color: var(--texto-suave); }
 .depoimentos__rodape { text-align: center; margin-top: var(--e-6); }
 
 /* --------------------------------------------------------- 12. Convênios -- */
@@ -548,6 +548,7 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
   padding: var(--e-7) var(--e-6); border-radius: var(--r-lg);
   background: var(--verde-escuro); color: var(--texto-inverso);
 }
+.convenios .selo { color: var(--dourado); }
 .convenios h2 { color: var(--branco); font-size: var(--t-xl); }
 .convenios p { margin-top: var(--e-3); color: var(--texto-inverso-suave); }
 .convenios__marcas { display: flex; flex-wrap: wrap; gap: var(--e-4); }
@@ -602,15 +603,18 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
 }
 .secao--escura .info-bloco h3 { color: var(--dourado); }
 .info-bloco p, .info-bloco a { color: var(--texto-inverso); font-size: var(--t-base); }
-.info-bloco a { text-decoration: underline; text-decoration-color: rgba(205,176,122,.6); }
-.info-bloco a:hover { color: var(--dourado); }
+.info-bloco a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  text-decoration: underline; text-decoration-color: rgba(205,176,122,.6);
+}
+@media (hover: hover) { .info-bloco a:hover { color: var(--dourado); } }
 .info-bloco__lista { list-style: none; padding: 0; display: grid; gap: var(--e-1); }
 
 /* Um cartão por fisioterapeuta, com WhatsApp e Ligar lado a lado */
 .contato__pessoas { list-style: none; padding: 0; display: grid; gap: var(--e-4); }
 .contato-pessoa {
   padding: var(--e-4); border-radius: var(--r-md);
-  background: rgba(255, 255, 255, .06); border: 1px solid rgba(205, 176, 122, .3);
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(205, 176, 122, .3);
 }
 .secao--escura .contato-pessoa__nome {
   font-family: var(--fonte-corpo); font-size: var(--t-base); font-weight: 700; color: var(--branco);
@@ -654,6 +658,7 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
 }
 .secao--escura .formulario h3 { color: var(--marrom); font-size: var(--t-xl); }
 .secao--escura .formulario p  { color: var(--texto-suave); }
+.formulario h3 + p { margin-top: var(--e-2); }
 .formulario__campos { display: grid; gap: var(--e-5); margin-top: var(--e-6); }
 .campo { display: grid; gap: var(--e-2); }
 .campo label { font-weight: 700; font-size: var(--t-base); color: var(--texto); }
@@ -671,7 +676,7 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234B3A2C' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 1rem center; background-size: 22px;
 }
-.campo input:hover, .campo select:hover, .campo textarea:hover { border-color: var(--marrom-medio); }
+@media (hover: hover) { .campo input:hover, .campo select:hover, .campo textarea:hover { border-color: var(--marrom-medio); } }
 .campo input:focus-visible, .campo select:focus-visible, .campo textarea:focus-visible {
   border-color: var(--marrom); border-radius: var(--r-sm);
 }
@@ -767,7 +772,7 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
   display: inline-flex; align-items: center; min-height: 44px;
   color: var(--texto-inverso); text-decoration: none; font-size: var(--t-sm);
 }
-.rodape a:hover { color: var(--dourado); text-decoration: underline; }
+@media (hover: hover) { .rodape a:hover { color: var(--dourado); text-decoration: underline; } }
 .redes { display: flex; flex-wrap: wrap; gap: var(--e-3); }
 .redes a {
   display: inline-flex; align-items: center; gap: var(--e-2);
@@ -932,7 +937,7 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
 }
 
 /* Páginas simples (obrigado, política, 404) */
-.pagina-simples { min-height: 70vh; display: grid; place-items: center; text-align: center; padding-block: var(--e-9); }
+.pagina-simples { min-height: 70vh; min-height: 70dvh; display: grid; place-items: center; text-align: center; padding-block: var(--e-9); }
 .pagina-simples__conteudo { max-width: 40rem; }
 .pagina-simples h1 { color: var(--marrom); font-size: var(--t-2xl); }
 .pagina-simples p { margin-top: var(--e-4); color: var(--texto-suave); font-size: var(--t-md); }
@@ -944,8 +949,9 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
 .texto-legal p + p { margin-top: var(--e-3); }
 .texto-legal ul { padding-left: 1.3em; display: grid; gap: var(--e-2); margin-top: var(--e-3); }
 
-/* Espaço para o botão flutuante não cobrir o fim do rodapé */
-.rodape { padding-bottom: calc(var(--e-6) + 88px); }
+/* Espaço para a barra de ações (celular, ~72px) ou o botão flutuante (computador, ~88px)
+   não cobrirem o fim do rodapé. Inclui a área segura do iPhone. */
+.rodape { padding-bottom: calc(var(--e-6) + 88px + env(safe-area-inset-bottom)); }
 
 /* O cabeçalho é "moldura": não cresce com o controle A+ (só o conteúdo cresce),
    garantindo que o botão Menu nunca saia da tela. */
@@ -953,5 +959,13 @@ button.servico__link { background: none; border: 0; padding: 0; font-family: inh
 .cabecalho__interno { gap: 12px; }
 .logo { gap: 12px; }
 .menu-botao { gap: 8px; padding: 8px 16px; }
+/* Rodapé enxuto das páginas simples (obrigado, política, 404) */
+.rodape.rodape--simples { padding-block: var(--e-6); }
+.rodape--simples .rodape__base { margin-top: 0; border-top: 0; padding-top: 0; }
+.pagina-simples__voltar { margin-top: var(--e-6); }
+
+/* Ícones (sprite SVG) não ocupam espaço na página */
+.sprite { display: none; }
+
 /* Botão "Voltar ao site" das páginas simples (obrigado, política, 404) */
 .cabecalho__interno > .btn { min-height: 48px; padding: 8px 12px; font-size: 17px; white-space: nowrap; }

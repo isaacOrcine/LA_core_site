@@ -12,8 +12,10 @@
  */
 
 declare(strict_types=1);
+date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
+header('Cache-Control: no-store');
 
 const DESTINO        = 'clinicalacore@gmail.com';
 const ASSUNTO_PREFIX = '[Site L.A. Core]';
@@ -40,8 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 if (!empty($_POST['site'])) {
     responder(200, true); // robô: finge sucesso e descarta
 }
-$inicio = (int) ($_POST['inicio'] ?? 0);
-if ($inicio > 0 && (microtime(true) * 1000 - $inicio) < TEMPO_MINIMO_S * 1000) {
+/* Tempo (ms) que a pessoa levou desde que abriu a página, medido no navegador.
+   Ausente ou muito curto = envio direto de robô. */
+$tempo = (int) ($_POST['tempo'] ?? 0);
+if ($tempo < TEMPO_MINIMO_S * 1000) {
     responder(200, true);
 }
 
@@ -122,14 +126,16 @@ if (!empty($config['smtp_senha']) && is_file($phpmailer)) {
         error_log('[lacore] SMTP: ' . $e->getMessage());
     }
 } else {
-    $remetente = $config['remetente'] ?? ('nao-responda@' . preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? 'localhost'));
+    /* O Host vem do cliente: deixa só caracteres válidos de domínio */
+    $dominio = preg_replace('/[^a-z0-9.-]/i', '', (string) ($_SERVER['HTTP_HOST'] ?? '')) ?: 'localhost';
+    $remetente = $config['remetente'] ?? ('nao-responda@' . preg_replace('/^www\./i', '', $dominio));
     $cabecalhos = [
         'From: Site L.A. Core <' . $remetente . '>',
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
         'Content-Transfer-Encoding: 8bit',
     ];
-    if ($email !== '') $cabecalhos[] = 'Reply-To: ' . $nome . ' <' . $email . '>';
+    if ($email !== '') $cabecalhos[] = 'Reply-To: ' . str_replace(['<', '>', '"', ','], '', $nome) . ' <' . $email . '>';
     $enviado = mail(DESTINO, '=?UTF-8?B?' . base64_encode($assunto) . '?=', $corpo, implode("\r\n", $cabecalhos));
 }
 

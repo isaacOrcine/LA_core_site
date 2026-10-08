@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Fisioterapia e Pilates em Divinópolis MG | L.A. Core</title>
-  <meta name="description" content="Clínica de Fisioterapia e Pilates em Divinópolis/MG, no bairro Ipiranga. Tratamento da dor, reabilitação ortopédica, fisioterapia infantil, geriátrica, recovery e Pilates. Agende pelo WhatsApp.">
+  <meta name="description" content="Clínica de Fisioterapia e Pilates em Divinópolis/MG, bairro Ipiranga. Tratamento da dor, reabilitação, fisioterapia infantil e geriátrica. Agende no WhatsApp.">
   <link rel="canonical" href="https://lacorefisio.com.br/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#4B3A2C">
@@ -21,36 +21,27 @@
   <meta property="og:image" content="https://lacorefisio.com.br/assets/img/og-lacore.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="As fisioterapeutas Anny Caroline e Lorena Araújo ao lado do logo da L.A. Core">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap">
+  <link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/js/escala.js"></script>
 
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/style.css">
-
-  <script>
-    /* Aplica o tamanho de fonte salvo antes da pintura, evitando "salto" de layout */
-    (function () {
-      document.documentElement.classList.remove('no-js');
-      try {
-        var e = localStorage.getItem('lacore-escala');
-        if (e) document.documentElement.style.setProperty('--escala-fonte', e);
-      } catch (_) {}
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalBusiness", "MedicalClinic", "LocalBusiness"],
+        "@type": ["MedicalBusiness", "MedicalClinic", "Physiotherapy", "LocalBusiness"],
         "@id": "https://lacorefisio.com.br/#clinica",
         "name": "L.A. Core Fisioterapia e Pilates",
         "alternateName": "LA Core",
@@ -60,7 +51,7 @@
         "image": "https://lacorefisio.com.br/assets/img/og-lacore.jpg",
         "email": "clinicalacore@gmail.com",
         "telephone": "+55-37-99128-6155",
-        "medicalSpecialty": ["PhysicalTherapy", "Pediatric", "Geriatric"],
+        "medicalSpecialty": ["Physiotherapy", "Pediatric", "Geriatric"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Rua Goiás, 2367",
@@ -125,16 +116,14 @@
         "mainEntity": [
           { "@type": "Question", "name": "Qual o horário de funcionamento da L.A. Core?",
             "acceptedAnswer": { "@type": "Answer", "text": "De segunda a sexta-feira, das 7h às 20h, e aos sábados, das 8h às 11h." } },
-          { "@type": "Question", "name": "Onde fica a clínica L.A. Core em Divinópolis?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Na Rua Goiás, 2367, bairro Ipiranga, Divinópolis/MG, CEP 35502-027. Não é permitido estacionar na Rua Goiás; recomendamos as ruas Itambé ou Ibituruna." } },
           { "@type": "Question", "name": "A L.A. Core aceita Gympass e TotalPass?",
             "acceptedAnswer": { "@type": "Answer", "text": "Sim. Aceitamos Gympass (Wellhub) e TotalPass para as aulas de Pilates, sem necessidade de check-in extra e sem horário fixo. Os horários são disponibilizados no início de cada semana." } },
-          { "@type": "Question", "name": "Quais formas de pagamento são aceitas?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Pix e dinheiro. Pagamentos em dinheiro têm desconto." } },
           { "@type": "Question", "name": "A clínica atende bebês e crianças?",
             "acceptedAnswer": { "@type": "Answer", "text": "Sim. A fisioterapeuta Lorena Araújo é especializada em desenvolvimento motor infantil e estimulação precoce em bebês e crianças." } },
           { "@type": "Question", "name": "Existe aula experimental de Pilates?",
             "acceptedAnswer": { "@type": "Answer", "text": "Sim. Por determinação do COFFITO (Resolução nº 424/2013), a aula experimental de Pilates não pode ser gratuita. O valor pago é abatido da primeira mensalidade caso o aluno continue as aulas." } },
+          { "@type": "Question", "name": "Onde posso estacionar?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Não é permitido estacionar na Rua Goiás. Recomendamos as ruas Itambé ou Ibituruna, bem próximas à clínica." } },
           { "@type": "Question", "name": "Preciso de pedido médico para fazer fisioterapia?",
             "acceptedAnswer": { "@type": "Answer", "text": "Não é obrigatório para atendimento particular. O primeiro passo é a avaliação fisioterapêutica, em que a profissional entende sua queixa e monta um plano de tratamento individual. Se tiver exames ou laudos, leve-os na avaliação." } }
         ]
@@ -147,7 +136,7 @@
   <a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- Sprite de ícones: cada <symbol> é reaproveitado com <use href="#i-..."> -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
     <defs>
       <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
       <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
@@ -182,7 +171,7 @@
   <!-- ================================================ CABEÇALHO ======== -->
   <header class="cabecalho" id="topo">
     <div class="container cabecalho__interno">
-      <a class="logo" href="/" aria-label="L.A. Core Fisioterapia e Pilates — página inicial">
+      <a class="logo" href="/" aria-label="L.A. CORE Fisioterapia &amp; Pilates — página inicial">
         <img src="/assets/img/logo.svg" alt="" width="52" height="52">
         <span class="logo__texto">
           <span class="logo__nome">L.A. CORE</span>
@@ -228,7 +217,7 @@
         <li><a href="#localizacao">Como chegar</a></li>
       </ul>
     </nav>
-    <div class="fonte-controle" role="group" aria-label="Tamanho do texto" style="display:flex; margin-top:1.5rem; width:max-content">
+    <div class="fonte-controle fonte-controle--menu" role="group" aria-label="Tamanho do texto">
       <button class="fonte-controle__btn fonte-controle__btn--p" type="button" data-escala="0.9" aria-pressed="false" aria-label="Diminuir texto">A</button>
       <button class="fonte-controle__btn fonte-controle__btn--m" type="button" data-escala="1" aria-pressed="true" aria-label="Texto normal">A</button>
       <button class="fonte-controle__btn fonte-controle__btn--g" type="button" data-escala="1.2" aria-pressed="false" aria-label="Aumentar texto">A</button>
@@ -345,7 +334,7 @@
         <div class="sobre__texto revelar">
           <span class="selo">Sobre a clínica</span>
           <h2 id="sobre-titulo">Olá! Seja bem-vindo(a) à L.A. Core</h2>
-          <p style="margin-top:1.5rem">
+          <p>
             A L.A. Core é uma clínica de fisioterapia comprometida com a excelência no
             atendimento e com o bem-estar de cada paciente, com um corpo clínico
             especializado e em constante atualização.
@@ -364,7 +353,7 @@
             </picture>
           </figure>
 
-          <ul class="pilares" style="list-style:none; padding:0">
+          <ul class="pilares">
             <li class="pilar">
               <span class="pilar__icone" aria-hidden="true"><svg><use href="#i-coracao"/></svg></span>
               <div><h3>Cuidado humanizado</h3><p>Escuta atenta e respeito ao seu tempo, à sua história e aos seus limites.</p></div>
@@ -409,7 +398,7 @@
               <div>
                 <h4 class="profissional__subtitulo">Formação</h4>
                 <!-- TODO: completar com a formação real (graduação, instituição, pós, cursos) -->
-                <ul class="profissional__lista" style="margin-top:.5rem">
+                <ul class="profissional__lista">
                   <li><svg aria-hidden="true"><use href="#i-check"/></svg>Graduação em Fisioterapia — [instituição]</li>
                   <li><svg aria-hidden="true"><use href="#i-check"/></svg>[Especialização / pós-graduação]</li>
                   <li><svg aria-hidden="true"><use href="#i-check"/></svg>Formação em Pilates — [instituição]</li>
@@ -438,7 +427,7 @@
               <div>
                 <h4 class="profissional__subtitulo">Formação</h4>
                 <!-- TODO: completar com a formação real (graduação, instituição, pós, cursos) -->
-                <ul class="profissional__lista" style="margin-top:.5rem">
+                <ul class="profissional__lista">
                   <li><svg aria-hidden="true"><use href="#i-check"/></svg>Graduação em Fisioterapia — [instituição]</li>
                   <li><svg aria-hidden="true"><use href="#i-check"/></svg>[Especialização em desenvolvimento motor infantil]</li>
                   <li><svg aria-hidden="true"><use href="#i-check"/></svg>Formação em Pilates — [instituição]</li>
@@ -591,11 +580,11 @@
     </section>
 
     <!-- ============================================ CONVÊNIOS =========== -->
-    <section class="secao" aria-labelledby="convenios-titulo" style="padding-block:var(--e-8)">
+    <section class="secao secao--compacta" aria-labelledby="convenios-titulo">
       <div class="container">
         <div class="convenios revelar">
           <div>
-            <span class="selo" style="color:var(--dourado)">Pilates</span>
+            <span class="selo">Pilates</span>
             <h2 id="convenios-titulo">Aceitamos Gympass e TotalPass</h2>
             <p>Sem check-in extra e sem horário fixo. Os horários disponíveis são divulgados no início de cada semana.</p>
           </div>
@@ -713,7 +702,7 @@
             </summary>
             <form class="formulario" action="/api/contato.php" method="post" novalidate data-formulario>
               <h3>Envie uma mensagem</h3>
-              <p style="margin-top:.5rem">Respondemos em até 1 dia útil. Campos com * são obrigatórios.</p>
+              <p>Respondemos em até 1 dia útil. Campos com * são obrigatórios.</p>
 
               <div class="formulario__campos">
                 <div class="formulario__linha">
@@ -730,7 +719,7 @@
                 </div>
                 <div class="campo">
                   <label for="f-email">E-mail <span class="campo__opcional">(opcional)</span></label>
-                  <input id="f-email" name="email" type="email" autocomplete="email" autocapitalize="off" enterkeyhint="next" maxlength="120" aria-describedby="f-email-erro">
+                  <input id="f-email" name="email" type="email" autocomplete="email" enterkeyhint="next" maxlength="120" aria-describedby="f-email-erro">
                   <p class="campo__erro" id="f-email-erro">Este e-mail parece incompleto. Confira, por exemplo: nome@gmail.com</p>
                 </div>
                 <div class="campo">
@@ -759,7 +748,7 @@
                   <label for="f-site">Não preencha</label>
                   <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off">
                 </div>
-                <input type="hidden" name="inicio" value="">
+                <input type="hidden" name="tempo" value="">
 
                 <div class="campo campo--check">
                   <input id="f-consentimento" name="consentimento" type="checkbox" value="sim" required aria-describedby="f-consentimento-erro">
@@ -812,7 +801,7 @@
 
           <div class="mapa__moldura" data-mapa
                data-mapa-src="https://www.google.com/maps?q=Rua+Goi%C3%A1s,+2367+-+Ipiranga,+Divin%C3%B3polis+-+MG,+35502-027&amp;output=embed">
-            <button class="mapa__capa" type="button" aria-label="Carregar mapa interativo do Google Maps">
+            <button class="mapa__capa" type="button">
               <span class="mapa__pino" aria-hidden="true"><svg><use href="#i-pino"/></svg></span>
               <span class="mapa__capa-texto">Rua Goiás, 2367 - Ipiranga</span>
               <span class="btn btn--primario">Toque para ver o mapa</span>
@@ -828,7 +817,7 @@
     <div class="container">
       <div class="rodape__grade">
         <div>
-          <a class="logo" href="/" aria-label="L.A. Core — voltar ao início">
+          <a class="logo" href="/" aria-label="L.A. CORE Fisioterapia &amp; Pilates — voltar ao início">
             <img src="/assets/img/logo.svg" alt="" width="52" height="52" loading="lazy">
             <span class="logo__texto">
               <span class="logo__nome">L.A. CORE</span>
@@ -858,7 +847,7 @@
         <div>
           <h2>Redes sociais</h2>
           <div class="redes">
-            <a href="https://www.instagram.com/lacorefisio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da L.A. Core (abre em nova aba)">
+            <a href="https://www.instagram.com/lacorefisio/" target="_blank" rel="noopener noreferrer" aria-label="@lacorefisio no Instagram (abre em nova aba)">
               <svg aria-hidden="true"><use href="#i-instagram"/></svg> @lacorefisio
             </a>
             <a href="https://www.google.com/maps/search/?api=1&amp;query=L.A.+Core+Fisioterapia+e+Pilates+Divin%C3%B3polis" target="_blank" rel="noopener noreferrer" aria-label="L.A. Core no Google (abre em nova aba)">

@@ -3,15 +3,11 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lacorefisio.com.br/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-08</lastmod>
     <image:image><image:loc>https://lacorefisio.com.br/assets/img/og-lacore.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://lacorefisio.com.br/politica-de-privacidade.html</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-10-08</lastmod>
   </url>
 </urlset>
