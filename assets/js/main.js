@@ -165,7 +165,7 @@
 
       var hoje = HORARIOS[dia];
       if (hoje && agora >= hoje[0] && agora < hoje[1]) {
-        return { aberto: true, texto: 'Aberto agora · até as ' + hora(hoje[1]) };
+        return { aberto: true, texto: 'Aberto agora · até às ' + hora(hoje[1]) };
       }
       if (hoje && agora < hoje[0]) {
         return { aberto: false, texto: 'Fechado agora · abre hoje às ' + hora(hoje[0]) };
