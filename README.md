@@ -1,4 +1,4 @@
-# Site L.A. Core Fisioterapia e Pilates
+# Site LA Core Fisioterapia e Pilates
 
 Site estático (HTML + CSS + JS, sem build) + `api/contato.php` para o formulário.
 Hospedagem: Hostinger, plano Sites.
@@ -16,15 +16,16 @@ O formulário só envia de verdade no servidor (precisa de PHP). Localmente ele 
 
 | Item | Onde | Status |
 |---|---|---|
-| **Domínio** — trocar `lacorefisio.com.br` pelo domínio real | `index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, `politica-de-privacidade.html` (um "localizar e substituir" resolve) | ⏳ |
-| **Logo oficial em SVG** | substituir `assets/img/logo.svg` e `favicon.svg` | ⏳ provisório |
+| **Domínio** `lacorefisioterapia.com.br` | `index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, `politica-de-privacidade.html` (se mudar, um "localizar e substituir" resolve) | ✅ |
+| **Logo oficial em SVG** | `assets/img/logo.svg` (monograma) e `favicon.svg`, gerados do PDF da marca | ✅ |
 | **Fotos** da estrutura, hero, "Sobre" e das profissionais | `assets/img/` — cada foto em `.avif` + `.jpg` (fallback), já recortadas e sem metadados. Originais em `fotos/` (não publicar essa pasta) | ✅ |
 | **Vídeo** de depoimentos (vertical 9:16) | `assets/video/depoimentos.mp4` (H.264 540×960, ~6 MB) + capa `assets/img/video-capa` | ✅ |
-| **Formação** das profissionais | `index.html`, blocos marcados com `TODO` | ⏳ |
+| **Formação** das profissionais | `index.html`, seção `#equipe` | ✅ |
 | **Depoimentos reais** com autorização por escrito | `index.html`, seção `#depoimentos` | ⚠️ **não publicar com os exemplos** |
 | **Link do Perfil da Empresa no Google** | `index.html` (botão "Ver avaliações" e rodapé) | ⏳ |
+| **Vídeo de Pilates** ("Acompanhe uma aula de Pilates e conheça a clínica") | `index.html`, seção `#pilates` (hoje mostra uma foto; há um `TODO` com o bloco do player) | ⏳ |
 | **Imagem de compartilhamento** 1200×630 | `assets/img/og-lacore.jpg` | ✅ |
-| **Ícone Apple** 180×180 | `assets/img/apple-touch-icon.png` | ⏳ provisório (gerado a partir do `favicon.svg`; trocar junto com o logo oficial) |
+| **Ícone Apple** 180×180 | `assets/img/apple-touch-icon.png` | ✅ gerado a partir do logo oficial |
 
 ## Publicar na Hostinger
 
@@ -32,9 +33,10 @@ O formulário só envia de verdade no servidor (precisa de PHP). Localmente ele 
 2. Envie **todo o conteúdo** desta pasta (exceto `README.md`, `PLANO.md` e a pasta `fotos/`), incluindo `.htaccess` e `api/.htaccess`
    (arquivos que começam com ponto ficam ocultos no Mac: `Cmd + Shift + .` para exibir).
 3. hPanel → **Segurança → SSL**: ativar o certificado gratuito. O `.htaccess` já força HTTPS.
-4. **E-mail do formulário** (recomendado, melhor entrega):
-   - hPanel → **E-mails**: criar `contato@SEU-DOMINIO`.
-   - Copiar `api/lacore-config.exemplo.php` para **um nível acima** de `public_html` com o nome `lacore-config.php` e preencher a senha.
+4. **E-mail do formulário** (recomendado, melhor entrega). As mensagens chegam em `clinicalacore@gmail.com` e o envio sai por essa mesma conta:
+   - Na conta Google da clínica: ativar a **verificação em duas etapas** e criar uma **senha de app** (myaccount.google.com/apppasswords). A senha normal do Gmail não funciona por SMTP.
+   - Copiar `api/lacore-config.exemplo.php` para **um nível acima** de `public_html` com o nome `lacore-config.php` e colar a senha de app.
+   - (Alternativa: criar uma caixa `contato@lacorefisioterapia.com.br` em hPanel → **E-mails** e usar o SMTP da Hostinger, como comentado no modelo.)
    - Baixar o [PHPMailer](https://github.com/PHPMailer/PHPMailer/releases) e enviar a pasta `src/` para `public_html/api/PHPMailer/src/`.
    - Sem esses dois passos, o formulário usa o `mail()` da Hostinger (funciona, mas tem mais chance de cair no spam).
 5. Enviar uma mensagem de teste pelo formulário e confirmar que chegou em **clinicalacore@gmail.com** (olhar o spam na primeira vez).
@@ -68,4 +70,4 @@ assets/js/main.js           menu, A-/A/A+, barra de ações, "aberto agora", map
 api/contato.php             envio do formulário por e-mail
 ```
 
-**Números de WhatsApp:** aparecem como `5537991286155` (Anny) e `5537999398070` (Lorena). Para trocar, "localizar e substituir" em todo o projeto.
+**Números de WhatsApp:** aparecem como `5537998445805` (Anny) e `5537999398070` (Lorena). Para trocar, "localizar e substituir" em todo o projeto.

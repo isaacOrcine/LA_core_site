@@ -1,5 +1,5 @@
 /* ==========================================================================
-   L.A. Core — comportamentos gerais da página
+   LA Core — comportamentos gerais da página
    ========================================================================== */
 (function () {
   'use strict';
@@ -111,7 +111,7 @@
       v.poster = moldura.dataset.videoPoster;
       v.controls = true;
       v.playsInline = true;
-      v.setAttribute('aria-label', moldura.dataset.videoTitulo || 'Vídeo da L.A. Core');
+      v.setAttribute('aria-label', moldura.dataset.videoTitulo || 'Vídeo da LA Core');
       moldura.innerHTML = '';
       moldura.appendChild(v);
       v.play().catch(function () {});
@@ -124,7 +124,7 @@
     moldura.querySelector('.mapa__capa').addEventListener('click', function () {
       var f = document.createElement('iframe');
       f.src = moldura.dataset.mapaSrc;
-      f.title = 'Mapa: L.A. Core, Rua Goiás 2367, Ipiranga, Divinópolis';
+      f.title = 'Mapa: LA Core, Rua Goiás 2367, Ipiranga, Divinópolis';
       f.loading = 'lazy';
       f.referrerPolicy = 'strict-origin-when-cross-origin';
       /* O mapa só precisa de scripts próprios e de abrir links em nova aba */
@@ -148,7 +148,7 @@
   var statusHorario = document.querySelectorAll('[data-status-horario]');
   if (statusHorario.length) {
     /* [abre, fecha] em minutos, por dia da semana (0 = domingo) */
-    var HORARIOS = [null, [420, 1200], [420, 1200], [420, 1200], [420, 1200], [420, 1200], [480, 660]];
+    var HORARIOS = [null, [420, 1200], [420, 1200], [420, 1200], [420, 1200], [420, 1020], [480, 660]];
     var DIAS = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
     var hora = function (min) { return Math.floor(min / 60) + 'h' + (min % 60 ? String(min % 60).padStart(2, '0') : ''); };
 

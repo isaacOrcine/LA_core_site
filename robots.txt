@@ -1,4 +1,4 @@
-# L.A. Core Fisioterapia e Pilates — Divinópolis/MG
+# LA Core Fisioterapia e Pilates — Divinópolis/MG
 # Todo o conteúdo público pode ser indexado por buscadores e assistentes de IA.
 # (robots.txt não é segurança: não coloque aqui nada que precise ficar escondido.)
 
@@ -20,4 +20,4 @@ User-agent: Applebot-Extended
 Allow: /
 Disallow: /api/
 
-Sitemap: https://lacorefisio.com.br/sitemap.xml
+Sitemap: https://lacorefisioterapia.com.br/sitemap.xml

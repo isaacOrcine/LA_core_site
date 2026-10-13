@@ -28,7 +28,7 @@
   opcoes.forEach(function (a) { a.dataset.wppBase = a.getAttribute('href'); });
 
   function mensagem(nome, servico) {
-    var base = 'Olá, ' + nome + '! Vim pelo site da L.A. Core e ';
+    var base = 'Olá, ' + nome + '! Vim pelo site da LA Core e ';
     return servico
       ? base + 'gostaria de saber mais sobre ' + servico + '.'
       : base + 'gostaria de agendar um atendimento.';

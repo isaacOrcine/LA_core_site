@@ -1,6 +1,6 @@
 <?php
 /**
- * L.A. Core — recebe o formulário de contato e envia por e-mail.
+ * LA Core — recebe o formulário de contato e envia por e-mail.
  *
  * Envio:
  *   1. SMTP autenticado (recomendado) se existir api/PHPMailer/src/ e o arquivo
@@ -18,7 +18,7 @@ header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
 
 const DESTINO        = 'clinicalacore@gmail.com';
-const ASSUNTO_PREFIX = '[Site L.A. Core]';
+const ASSUNTO_PREFIX = '[Site LA Core]';
 const LIMITE_POR_HORA = 5;
 const TEMPO_MINIMO_S  = 3;
 
@@ -80,7 +80,7 @@ if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 /* ---- Monta a mensagem ---- */
 $wpp = 'https://wa.me/55' . ltrim($digitos, '0');
-$corpo = "Nova mensagem pelo site da L.A. Core\n"
+$corpo = "Nova mensagem pelo site da LA Core\n"
        . "========================================\n\n"
        . "Nome:      {$nome}\n"
        . "Telefone:  {$telefone}\n"
@@ -116,7 +116,7 @@ if (!empty($config['smtp_senha']) && is_file($phpmailer)) {
         $m->Username   = $config['smtp_usuario'];
         $m->Password   = $config['smtp_senha'];
         $m->CharSet    = 'UTF-8';
-        $m->setFrom($config['smtp_usuario'], 'Site L.A. Core');
+        $m->setFrom($config['smtp_usuario'], 'Site LA Core');
         $m->addAddress(DESTINO);
         if ($email !== '') $m->addReplyTo($email, $nome);
         $m->Subject = $assunto;
@@ -130,7 +130,7 @@ if (!empty($config['smtp_senha']) && is_file($phpmailer)) {
     $dominio = preg_replace('/[^a-z0-9.-]/i', '', (string) ($_SERVER['HTTP_HOST'] ?? '')) ?: 'localhost';
     $remetente = $config['remetente'] ?? ('nao-responda@' . preg_replace('/^www\./i', '', $dominio));
     $cabecalhos = [
-        'From: Site L.A. Core <' . $remetente . '>',
+        'From: Site LA Core <' . $remetente . '>',
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
         'Content-Transfer-Encoding: 8bit',

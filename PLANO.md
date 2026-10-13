@@ -1,4 +1,4 @@
-# Plano de Trabalho — Site L.A. Core Fisioterapia e Pilates
+# Plano de Trabalho — Site LA Core Fisioterapia e Pilates
 
 **Objetivo:** site institucional responsivo, rápido e otimizado para busca (Google + citação por IAs), servindo como canal de captação de pacientes em Divinópolis/MG. Conversão principal = clique no WhatsApp.
 
@@ -151,7 +151,7 @@ Espaçamento em escala 4/8px · raio de borda 16–24px (cards arredondados como
 - `.htaccess`: Gzip/Brotli, cache-control longo para assets, headers de segurança (`X-Content-Type-Options`, `Referrer-Policy`, CSP básica).
 
 ### 6.2 On-page
-- **Title:** `Fisioterapia e Pilates em Divinópolis MG | L.A. Core`
+- **Title:** `Fisioterapia e Pilates em Divinópolis MG | LA Core`
 - **Meta description** com proposta de valor + localização + CTA.
 - Um único `<h1>`; hierarquia H2/H3 correta; `lang="pt-BR"`.
 - Palavras-chave locais trabalhadas no texto: *fisioterapia em Divinópolis*, *pilates Divinópolis*, *fisioterapia pediátrica Divinópolis*, *clínica de fisioterapia bairro Ipiranga*, *fisioterapia ortopédica MG*, *estimulação precoce bebê Divinópolis*.
@@ -236,7 +236,7 @@ Pontos que impactam o conteúdo e precisam ser respeitados no texto do site:
 - Preços: **não serão publicados**
 
 **Bloqueador restante:**
-1. **Domínio** já contratado? Qual? (ex.: `lacorefisio.com.br`) — necessário para canonical, sitemap e SSL.
+1. **Domínio** já contratado? Qual? (ex.: `lacorefisioterapia.com.br`) — necessário para canonical, sitemap e SSL.
 
 **Importantes (posso usar placeholder e trocar depois):**
 4. **Logo em vetor** (SVG/PDF/AI) — o do PDF é raster e vai ficar borrado em tela retina.
